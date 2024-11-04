@@ -1,0 +1,19 @@
+<div id="projectsDiv">
+    <div id="linkDiv">
+        <h3>Featured Projects:</h3>
+        <ul id="projectLinks">
+            <li *ngFor="let project of projects">
+                <a href="#" (click)="changeProject(project.name)">{{project.name}}</a>
+            </li>
+        </ul>
+    </div>
+    <ul id="projectList">
+        <li *ngFor="let project of projects" class="project">
+            <div *ngIf="curProject == project.name">
+                <h3>{{project.name}}</h3>
+                <p>{{project.description}}</p>
+                <p>Tech Stack: {{project.tech}}</p>
+            </div>
+        </li>
+    </ul>
+</div>
